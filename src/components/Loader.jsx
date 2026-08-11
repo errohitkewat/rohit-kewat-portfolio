@@ -2,7 +2,7 @@ const Loader = () => {
   return (
     <div
       data-loader
-      className="fixed inset-0 z-[100] bg-[#111] text-[#f3f3ef] will-change-transform"
+      className="fixed inset-0 z-100 bg-[#111] text-[#f3f3ef] will-change-transform"
     >
       <div className="flex h-full w-full flex-col justify-between px-5 py-6 sm:px-8 sm:py-7">
         <div className="flex justify-between font-mono text-[9px] tracking-[0.08em] sm:text-[11px]">
