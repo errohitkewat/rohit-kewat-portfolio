@@ -12,7 +12,7 @@ const Hero = () => {
         className="absolute left-1/2 top-[12%] z-20 flex -translate-x-1/2 items-center gap-2 whitespace-nowrap text-[clamp(16px,1.8vw,28px)] font-normal"
       >
         <span className="text-xl sm:text-xl">👋</span>
-        <span className="text-xl" >Hey, I'm Rohit and I'm a</span>
+        <span className="text-xl font-medium" >Hey, I'm Rohit and I'm a</span>
       </div>
 
       <div className="pointer-events-none absolute left-1/2 top-[21%] z-10 w-full -translate-x-1/2">

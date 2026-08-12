@@ -48,9 +48,9 @@ const projects = [
       "Planora combines task management, daily planning and productivity tools into a single dashboard.",
 
     technologies: [
-      "React",
-      "Tailwind CSS",
-      "GSAP",
+      "HTML",
+      "CSS",
+      "DOM",
       "OpenWeather API",
     ],
 
@@ -83,7 +83,8 @@ const projects = [
       "React",
       "Tailwind CSS",
       "React Query",
-      "Redux",
+      "Data Routing",
+      "Json Products API"
     ],
 
     features: [
