@@ -1,4 +1,6 @@
+
 const Loader = () => {
+  
   return (
     <div
       data-loader
@@ -19,7 +21,7 @@ const Loader = () => {
           </div>
           <div
             data-loader-label
-            className="mt-[18px] font-mono text-[9px] tracking-[0.16em] sm:text-[11px]"
+            className="mt-4.5 font-mono text-[9px] tracking-[0.16em] sm:text-[11px]"
           >
             INITIALIZING PORTFOLIO
           </div>

@@ -1,5 +1,4 @@
 import profileImage from "../assets/rohit-profile.png";
-import Navbar from "./Navbar";
 
 const Hero = () => {
   return (
@@ -7,7 +6,6 @@ const Hero = () => {
       id="top"
       className="relative flex min-h-screen w-full items-center justify-center overflow-hidden bg-[#f7f7f5] text-[#111]"
     >
-      <Navbar />
 
       <div
         data-hero-intro
