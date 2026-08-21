@@ -15,11 +15,6 @@ const useProjectsAnimation = (container) => {
 
       if (!section || !cards.length) return;
 
-      /*
-       * ========================================
-       * INITIAL STATES
-       * ========================================
-       */
 
       // Heading hidden initially
       gsap.set(label, {
@@ -50,14 +45,6 @@ const useProjectsAnimation = (container) => {
         });
       });
 
-      /*
-       * ========================================
-       * 1. SECTION ENTER ANIMATION
-       *
-       * Starts when section reaches 30%
-       * of viewport.
-       * ========================================
-       */
 
       const enterTl = gsap.timeline({
         scrollTrigger: {
@@ -99,13 +86,7 @@ const useProjectsAnimation = (container) => {
           "-=0.35"
         );
 
-      /*
-       * ========================================
-       * 2. PROJECT SCROLL ANIMATION
-       *
-       * ONLY PROJECT 2, 3...
-       * ========================================
-       */
+
 
       const tl = gsap.timeline({
         scrollTrigger: {

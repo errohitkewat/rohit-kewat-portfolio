@@ -42,7 +42,16 @@ const Navbar = () => {
           ABOUT
         </a>
 
-        <a href=" /#contact"className="transition-opacity duration-200 hover:opacity-50">
+        <NavLink
+          to="/resume"
+          className={({ isActive }) =>
+            `transition-opacity duration-200 hover:opacity-50 ${isActive ? "underline underline-offset-4" : ""}`
+          }
+        >
+          RESUME
+        </NavLink>
+
+        <a href="/#contact" className="transition-opacity duration-200 hover:opacity-50">
           CONTACT
         </a>
 

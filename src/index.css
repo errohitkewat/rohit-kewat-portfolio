@@ -28,3 +28,111 @@ body {
   color: #f7f7f5;
 }
 
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  html {
+    font-size: 12.5px;
+    scroll-behavior: auto;
+  }
+
+  body {
+    background: #fff;
+  }
+
+  /* Force everything into printable black-on-white */
+
+  .resume-page,
+  .resume-page * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+    border-color: #bbb !important;
+  }
+
+  .resume-page {
+    min-height: auto !important;
+    overflow: visible !important;
+    padding: 14mm 15mm !important;
+  }
+
+  /* Screen-only chrome */
+
+  .resume-toolbar,
+  .resume-footer span:last-child {
+    display: none !important;
+  }
+
+  [data-resume-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Compact single-column ATS layout */
+
+  .resume-header h1 {
+    font-size: 22pt !important;
+    line-height: 1 !important;
+  }
+
+  .resume-header p {
+    font-size: 10pt !important;
+    margin-top: 1.5mm !important;
+  }
+
+  .resume-contact {
+    text-align: right;
+    font-size: 9.5pt !important;
+    line-height: 1.6 !important;
+  }
+
+  .resume-section {
+    display: block !important;
+    margin-top: 4mm !important;
+    padding-top: 3mm !important;
+    break-inside: avoid;
+  }
+
+  .resume-label {
+    font-size: 8.5pt !important;
+    letter-spacing: 0.14em !important;
+    margin-bottom: 1.5mm;
+  }
+
+  .resume-section > p {
+    font-size: 10.5pt !important;
+    line-height: 1.4 !important;
+  }
+
+  .resume-item {
+    padding: 1.5mm 0 !important;
+    break-inside: avoid;
+  }
+
+  .resume-item h3 {
+    font-size: 11pt !important;
+  }
+
+  .resume-item p,
+  .resume-item li,
+  .resume-link {
+    font-size: 9.5pt !important;
+    line-height: 1.4 !important;
+  }
+
+  .resume-chip {
+    display: inline-block !important;
+    padding: 0 1mm !important;
+    border: none !important;
+    font-size: 9.5pt !important;
+  }
+
+  .resume-chip:not(:last-child)::after {
+    content: ", ";
+  }
+}
+

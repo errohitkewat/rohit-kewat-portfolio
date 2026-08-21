@@ -1,4 +1,5 @@
 import { useRef } from "react";
+import { NavLink } from "react-router-dom";
 import useContactAnimation from "../hooks/useContactAnimation";
 
 const Contact = () => {
@@ -59,6 +60,23 @@ const Contact = () => {
           >
             rohitkewat.er@email.com
           </a>
+
+          <div className="mt-8 flex gap-6 font-mono text-[10px] tracking-[0.12em] text-white/50 sm:text-xs">
+            <a
+              href="https://github.com/errohitkewat"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-opacity duration-200 hover:opacity-50"
+            >
+              GITHUB ↗
+            </a>
+            <NavLink
+              to="/resume"
+              className="transition-opacity duration-200 hover:opacity-50"
+            >
+              RESUME ↗
+            </NavLink>
+          </div>
         </div>
       </div>
 

@@ -47,7 +47,7 @@ const Projects = () => {
             key={project.slug}
             to={`/projects/${project.slug}`}
             data-project-card
-            className=" absolute inset-0 block overflow-hidden rounded-xl bg-[#181818] outline-none sm:rounded-2xl"
+            className=" group absolute inset-0 block overflow-hidden rounded-xl bg-[#181818] outline-none sm:rounded-2xl"
           >
             {/* IMAGE */}
 
@@ -55,12 +55,24 @@ const Projects = () => {
               src={project.imageUrl}
               alt={project.title}
               draggable="false"
-              className=" absolute inset-0 h-full w-full object-cover object-top"
+              className="absolute inset-0 h-full w-full object-cover object-top transition-transform duration-700 ease-out group-hover:scale-[1.03]"
             />
 
             {/* OVERLAY */}
 
-            <div className="absolute inset-0 bg-black/10" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent" />
+
+            {/* META */}
+
+            <div className="absolute bottom-5 left-5 z-10 sm:bottom-7 sm:left-7">
+              <p className="font-mono text-[9px] tracking-[0.14em] text-white/60 sm:text-[11px]">
+                {project.category} — {project.year}
+              </p>
+
+              <h3 className="mt-2 text-3xl font-black tracking-[-0.04em] text-white sm:text-5xl">
+                {project.title}
+              </h3>
+            </div>
 
             {/* ARROW */}
 
