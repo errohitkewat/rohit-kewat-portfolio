@@ -69,6 +69,14 @@ const Resume = () => {
             >
               {resume.github}
             </a>
+            <a
+              href={resume.linkedinUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block hover:text-white"
+            >
+              {resume.linkedin}
+            </a>
           </div>
         </div>
       </header>

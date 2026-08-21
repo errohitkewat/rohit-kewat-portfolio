@@ -5,6 +5,8 @@ const resume = {
   email: "rohitkewat.er@email.com",
   github: "github.com/errohitkewat",
   githubUrl: "https://github.com/errohitkewat",
+  linkedin: "https://www.linkedin.com/in/rohit-kewat",
+  linkedinUrl: "https://www.linkedin.com/in/rohit-kewat-90b276347/",
 
   summary:
     "Full-stack developer who believes the best way to learn is to ship. I've taken multiple products from idea to live URL — a startup website, a productivity dashboard and an e-commerce frontend — handling everything from interface design to deployment. I care about clean code, honest UX and the small details that make software feel effortless.",
@@ -89,7 +91,7 @@ const resume = {
     {
       period: "2022 — 2026",
       degree: "B.Tech, Computer Science & Engineering",
-      school: "Update in src/data/resume.js",
+      school: "AKS University",
     },
   ],
 };
