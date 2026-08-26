@@ -1,99 +1,111 @@
-import forgeImage from "../assets/projects/forge-site-image.png";
-import planoraImage from "../assets/projects/productivity-app-image.png";
+
 import skymartImage from "../assets/projects/skymart-image.png";
+import titanAestheticsImage from "../assets/projects/gym-aesthetic.png"
+import yogalinImage from "../assets/projects/yogalin-image.png";
 
 const projects = [
   {
-    slug: "forge",
-    title: "Forge Site",
-    category: "IT STARTUP",
-    year: "2026",
-    role: "Design & Development",
-    timeline: "3 Weeks",
-    status: "Live",
-    imageUrl: forgeImage,
-
-    description:
-      "A modern startup website focused on creating a clean, professional and interactive digital experience.",
-
-    overview:
-      "Forge is a modern web experience designed for an IT startup. The goal was to create a strong visual identity while keeping the interface simple, responsive and easy to navigate.",
-
-    challenge:
-      "The startup needed to stand out in a crowded market while communicating trust and professionalism from the very first scroll — without overwhelming visitors with heavy visuals or slow load times.",
-
-    solution:
-      "I built a component-driven React architecture with GSAP-powered scroll animations that feel intentional rather than decorative. Every section was designed mobile-first and tuned for performance.",
-
-    technologies: [
-      "React",
-      "JavaScript",
-      "Tailwind CSS",
-      "GSAP",
-    ],
-
-    features: [
-      "Fully responsive layout across all devices",
-      "Scroll-driven interactive animations",
-      "Modern, minimal UI system",
-      "Reusable component architecture",
-    ],
-
-    learnings: [
-      "Structuring animations around a timeline keeps motion consistent site-wide.",
-      "Mobile-first design decisions early prevent costly rework later.",
-    ],
-
-    github: "https://github.com/errohitkewat/forge-site",
-    live: "https://forge-site-sage.vercel.app/",
-  },
-
-  {
-    slug: "planora",
-    title: "Planora",
-    category: "PRODUCTIVITY",
+    slug: "titan-aesthetics",
+    title: "Titan Aesthetics",
+    category: "FITNESS",
     year: "2026",
     role: "Full Development",
     timeline: "4 Weeks",
     status: "Live",
-    imageUrl: planoraImage,
-
+    imageUrl: titanAestheticsImage,
+  
     description:
-      "A productivity dashboard designed to help users organize tasks, goals and their daily workflow.",
-
+      "A modern multi-page gym website designed for Titan Aesthetics, featuring programs, trainers, membership plans and a complete inquiry experience.",
+  
     overview:
-      "Planora combines task management, daily planning and productivity tools into a single dashboard, so users can organize their entire day without switching between apps.",
-
+      "Titan Aesthetics is a marketing website for a local gym that presents the brand, training programs, coaches, membership options and gym information through a bold editorial interface. The project was designed to give the gym a professional digital presence and make it easier for potential members to explore its services.",
+  
     challenge:
-      "Productivity tools often fail because they add friction instead of removing it. The challenge was to pack multiple tools — tasks, goals, planner, timer and weather — into one interface that still feels calm and fast.",
-
+      "The challenge was to design a visually strong fitness website while keeping the information architecture clear across multiple pages. The website needed to communicate programs, trainers, membership pricing and contact information without making the experience feel overloaded.",
+  
     solution:
-      "I designed a modular dashboard where each tool lives in its own focused panel. Vanilla JavaScript with clean DOM architecture kept the app lightweight, while the OpenWeather API adds contextual value to daily planning.",
-
+      "I built a multi-page React SPA using reusable UI components and centralized content management. React Router handles navigation, Redux Toolkit manages shared UI state, React Hook Form provides form validation, and Framer Motion adds smooth scroll reveals and transitions throughout the experience.",
+  
     technologies: [
-      "HTML",
-      "CSS",
-      "JavaScript",
-      "DOM",
-      "OpenWeather API",
+      "React 18",
+      "Vite",
+      "Tailwind CSS",
+      "React Router",
+      "Redux Toolkit",
+      "Framer Motion",
+      "React Hook Form",
     ],
-
+  
     features: [
-      "Todo management with local persistence",
-      "Daily planner with time blocking",
-      "Goal tracking system",
-      "Pomodoro focus timer",
-      "Live weather module via API",
+      "Multi-page responsive gym website",
+      "Filterable training programs catalogue",
+      "Trainer profiles and program details",
+      "Membership plans with monthly and annual pricing toggle",
+      "FAQ and contact inquiry form",
+      "Embedded Google Maps location",
+      "Newsletter subscription and form validation",
     ],
-
+  
     learnings: [
-      "Working directly with the DOM deepened my understanding of what frameworks abstract away.",
-      "API error states matter as much as the happy path.",
+      "Centralizing business content makes a multi-page website easier to maintain and update.",
+      "Reusable UI components create a more consistent design system and speed up development.",
     ],
-
-    github: "https://github.com/errohitkewat/my-cohort3-assignments/tree/main/productivity%20app",
-    live: "https://productivity-app-tan.vercel.app/",
+  
+    github: "Private Repo",
+    live: "https://gym-website-eight-steel.vercel.app/",
   },
+
+
+  {
+    slug: "yogalin",
+    title: "Yogalin",
+    category: "WELLNESS",
+    year: "2026",
+    role: "Full Development",
+    timeline: "3 Weeks",
+    status: "Live",
+    imageUrl: yogalinImage,
+  
+    description:
+      "A modern and calming yoga studio website designed to help visitors explore classes, programs, journal content and book sessions with ease.",
+  
+    overview:
+      "Yogalin is a fully responsive multi-page yoga studio experience built around mindful living. The website combines studio information, classes, programs, journal content and a seamless booking experience into a calm and visually polished interface.",
+  
+    challenge:
+      "The challenge was to create a visually engaging website with rich animations and multiple pages without making the experience feel distracting or heavy. The interface needed to support booking interactions and complex navigation while preserving the calm and mindful character of a yoga brand.",
+  
+    solution:
+      "I developed a responsive React application with reusable components, centralized state management and smooth page transitions. Framer Motion handles animations, Redux Toolkit manages UI state such as the booking modal, and Lenis creates a refined smooth-scrolling experience.",
+  
+    technologies: [
+      "React 19",
+      "Vite",
+      "Tailwind CSS",
+      "Redux Toolkit",
+      "Framer Motion",
+      "React Router",
+      "Lenis",
+    ],
+  
+    features: [
+      "Multi-page responsive yoga studio website",
+      "Classes and programs browsing",
+      "Interactive class booking modal",
+      "Journal and blog-style content sections",
+      "Smooth scrolling and page transitions",
+      "Custom cursor, preloader and scroll progress indicator",
+    ],
+  
+    learnings: [
+      "Complex animations need to support the user experience instead of competing with the content.",
+      "Centralized state management makes shared UI interactions easier to maintain across multiple pages.",
+    ],
+  
+    github: "Private Repo",
+    live: "https://yoga-website-demo-dun.vercel.app/",
+  },
+
 
   {
     slug: "skymart",
@@ -143,3 +155,6 @@ const projects = [
 ];
 
 export default projects;
+
+
+
