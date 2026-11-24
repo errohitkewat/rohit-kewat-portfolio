@@ -1,127 +1,45 @@
-import { NavLink } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { Home, FolderGit2, Briefcase, Mail, Github, Linkedin, Sun, Moon } from "lucide-react";
+import { Dock, DockIcon } from "./Dock";
+import { Tip } from "./Tip";
+import resume from "../data/resume";
 
-const Navbar = () => {
-  const [scrolled, setScrolled] = useState(false);
-  const [open, setOpen] = useState(false);
+const nav = [
+  { label: "Home", href: "#hero", icon: Home },
+  { label: "Experience", href: "#work", icon: Briefcase },
+  { label: "Projects", href: "#projects", icon: FolderGit2 },
+  { label: "Contact", href: "#contact", icon: Mail },
+];
+const social = [
+  { label: "GitHub", href: resume.githubUrl, icon: Github },
+  { label: "LinkedIn", href: resume.linkedinUrl, icon: Linkedin },
+];
+const icon = "size-full cursor-pointer rounded-3xl border border-border bg-background p-0 text-muted-foreground backdrop-blur-3xl transition-colors hover:bg-muted hover:text-foreground";
+const Sep = () => <div className="m-auto h-2/3 w-px bg-border" />;
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setScrolled(window.scrollY > 20);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const closeMenu = () => setOpen(false);
-
-  return (
-    <nav
-      className={`fixed left-0 right-0 top-0 z-50 transition-all duration-300
-        ${
-          scrolled || open
-            ? "border-b border-white/10 bg-[#111]/90 text-white backdrop-blur-lg"
-            : "bg-transparent text-black"
-        }
-      `}
-    >
-      <div className="flex items-center justify-between px-5 py-4 sm:px-8 sm:py-4">
-        {/* LOGO */}
-
-        <a
-          href="/#top"
-          onClick={closeMenu}
-          className="text-2xl font-extrabold tracking-[-0.08em] transition-opacity duration-200 hover:opacity-50"
-        >
-          RK.
-        </a>
-
-        {/* NAVIGATION (desktop) */}
-
-        <div className="hidden items-center gap-7 font-mono text-[11px] tracking-[0.08em] sm:flex">
-          <a href="/#work" className="transition-opacity duration-200 hover:opacity-50">
-            WORK
-          </a>
-
-          <a href="/#about" className="transition-opacity duration-200 hover:opacity-50">
-            ABOUT
-          </a>
-
-          <NavLink
-            to="/resume"
-            className={({ isActive }) =>
-              `transition-opacity duration-200 hover:opacity-50 ${isActive ? "underline underline-offset-4" : ""}`
-            }
-          >
-            RESUME
-          </NavLink>
-
-          <a href="/#contact" className="transition-opacity duration-200 hover:opacity-50">
-            CONTACT
-          </a>
-        </div>
-
-        {/* HAMBURGER (mobile) */}
-
-        <button
-          type="button"
-          aria-label="Toggle menu"
-          aria-expanded={open}
-          onClick={() => setOpen((prev) => !prev)}
-          className="flex h-9 w-9 flex-col items-center justify-center gap-[5px] sm:hidden"
-        >
-          <span
-            className={`h-px w-5 bg-current transition-transform duration-300 ${
-              open ? "translate-y-[3px] rotate-45" : ""
-            }`}
-          />
-          <span
-            className={`h-px w-5 bg-current transition-all duration-300 ${
-              open ? "-translate-y-[3px] -rotate-45" : "opacity-100"
-            }`}
-          />
-        </button>
-      </div>
-
-      {/* MOBILE MENU PANEL */}
-
-      <div
-        className={`overflow-hidden transition-[max-height,opacity] duration-300 ease-out sm:hidden ${
-          open ? "max-h-72 opacity-100" : "max-h-0 opacity-0"
-        }`}
-      >
-        <div className="flex flex-col px-5 pb-5 font-mono text-xs tracking-[0.08em]">
-          <a href="/#work" onClick={closeMenu} className="border-t border-white/10 py-3">
-            WORK
-          </a>
-
-          <a href="/#about" onClick={closeMenu} className="border-t border-white/10 py-3">
-            ABOUT
-          </a>
-
-          <NavLink
-            to="/resume"
-            onClick={closeMenu}
-            className={({ isActive }) =>
-              `border-t border-white/10 py-3 transition-opacity duration-200 hover:opacity-50 ${
-                isActive ? "underline underline-offset-4" : ""
-              }`
-            }
-          >
-            RESUME
-          </NavLink>
-
-          <a href="/#contact" onClick={closeMenu} className="border-t border-white/10 py-3">
-            CONTACT
-          </a>
-        </div>
-      </div>
-    </nav>
+export default function Navbar() {
+  const [dark, setDark] = useState(false);
+  useEffect(() => { document.documentElement.classList.toggle("dark", dark); }, [dark]);
+  const link = ({ label, href, icon: I }, ext) => (
+    <Tip key={label} label={label}>
+      <a href={href} {...(ext && { target: "_blank", rel: "noopener noreferrer" })} aria-label={label}>
+        <DockIcon className={icon}><I className="size-full overflow-hidden rounded-sm object-contain p-0.5" /></DockIcon>
+      </a>
+    </Tip>
   );
-};
-
-export default Navbar;
+  return (
+    <div className="pointer-events-none fixed inset-x-0 bottom-4 z-30">
+      <Dock className="pointer-events-auto relative z-50 mx-auto flex h-14 w-fit gap-2 border bg-card/90 p-2 shadow-[0_0_10px_3px] shadow-primary/5 backdrop-blur-3xl">
+        {nav.map((n) => link(n))}
+        <Sep />
+        {social.map((s) => link(s, true))}
+        <Sep />
+        <Tip label="Theme">
+          <button onClick={() => setDark((d) => !d)} aria-label="Toggle theme">
+            <DockIcon className={icon}>{dark ? <Sun className="size-full p-0.5" /> : <Moon className="size-full p-0.5" />}</DockIcon>
+          </button>
+        </Tip>
+      </Dock>
+    </div>
+  );
+}

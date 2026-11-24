@@ -30,10 +30,10 @@ const resume = {
     },
     {
       period: "2026 — Present",
-      role: "Software Engineering (Self Directed)",
-      company: "Independent Study",
+      role: "Full Stack Development with Gen AI · Cohort 3.0 (Online)",
+      company: "Sheryians Coding School",
       points: [
-        "Learning full-stack development end to end and shipping real projects with modern web technologies.",
+        "Learning full-stack development with Gen AI end to end in Sheryians Coding School's online Cohort 3.0, and shipping real projects with modern web technologies.",
       ],
     },
   ],
