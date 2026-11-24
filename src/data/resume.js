@@ -21,7 +21,7 @@ const resume = {
       ],
     },
     {
-      period: "2026",
+      period: "Jan 5, 2026 — Apr 5, 2026",
       role: "Frontend Development Intern",
       company: "TFP Technologies",
       points: [
@@ -29,11 +29,11 @@ const resume = {
       ],
     },
     {
-      period: "2026 — Present",
-      role: "Software Engineering (Self Directed)",
-      company: "Independent Study",
+      period: "May 2026 — Present",
+      role: "Full Stack Development with Gen AI · Cohort 3.0 (Online)",
+      company: "Sheryians Coding School",
       points: [
-        "Learning full-stack development end to end and shipping real projects with modern web technologies.",
+        "Learning full-stack development with Gen AI end to end in Sheryians Coding School's online Cohort 3.0, and shipping real projects with modern web technologies.",
       ],
     },
   ],
